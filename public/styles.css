@@ -1,199 +1,187 @@
+/* General Styling */
 body {
-	font-family: Arial, sans-serif;
+	font-family: "Arial", sans-serif;
 	margin: 0;
 	padding: 0;
-	background-color: #f9f9f9;
-	color: #333;
+	background-color: #eaf6f6; /* Soft pastel blue */
+	color: #2f4f4f; /* Darker gray-blue for text */
+	line-height: 1.6;
 }
 
-header {
-	background-color: #fff;
-	border-bottom: 2px solid #ccc;
+/* Navigation */
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #cde4e4; /* Light blue accent */
 	padding: 10px 20px;
-	text-align: center;
 }
 
-header .logo img {
-	max-height: 50px;
+.nav-logo img {
+	height: 50px;
+	border-radius: 50%; /* Rounded logo */
 }
 
 nav ul {
-	list-style-type: none;
+	list-style: none;
+	display: flex;
 	padding: 0;
-	margin: 10px 0 0;
+	margin: 0;
 }
 
 nav ul li {
-	display: inline;
 	margin: 0 15px;
 }
 
 nav ul li a {
 	text-decoration: none;
-	color: #007bff;
+	color: #2f4f4f; /* Dark gray-blue for text */
 	font-weight: bold;
 }
 
-.page {
-	padding: 20px;
-	max-width: 800px;
-	margin: 20px auto;
-	background: #fff;
-	border: 1px solid #ccc;
-	border-radius: 8px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+/* Hero Section */
+.hero {
 	text-align: center;
-	font-size: 24px;
+	background: #eaf6f6; /* Light pastel blue */
+	padding: 50px 20px;
+}
+
+.hero img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 10px;
+	filter: grayscale(50%); /* Softens the image tones */
+}
+
+.hero h1 {
+	font-size: 36px;
+	margin: 20px 0;
+	color: #2f4f4f; /* Dark gray-blue */
+}
+
+.hero p {
+	font-size: 18px;
 	margin-bottom: 20px;
-	color: #444;
 }
 
-.search-bar {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 20px;
-}
-
-.search-bar input {
-	padding: 10px;
-	font-size: 16px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	flex: 1;
-	max-width: 300px;
-	margin-right: 10px;
-}
-
-.search-bar button {
-	padding: 10px 20px;
-	font-size: 16px;
+.hero button {
+	padding: 12px 24px;
+	font-size: 18px;
 	border: none;
-	background-color: #007bff;
-	color: white;
-	border-radius: 4px;
+	background-color: #cde4e4; /* Light blue accent */
+	color: #2f4f4f;
+	border-radius: 5px;
 	cursor: pointer;
 }
 
-.search-bar button:hover {
-	background-color: #0056b3;
+.hero button:hover {
+	background-color: #bfdada; /* Slightly darker blue */
 }
 
-.dog-info p,
-.feed-card p {
-	margin: 10px 0;
-	font-size: 16px;
-}
-
-.feed-card {
+/* Features Section */
+.features {
 	display: flex;
-	align-items: center;
-	margin-bottom: 20px;
-	padding: 10px;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	background-color: #fafafa;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+	justify-content: space-around;
+	padding: 40px 20px;
+	background: #eaf6f6; /* Light pastel blue */
 }
 
-.feed-card img {
+.feature-box {
+	text-align: center;
+	width: 30%;
+	background-color: #ffffff; /* White card */
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box img {
 	width: 80px;
 	height: 80px;
-	border-radius: 50%;
-	margin-right: 15px;
-	border: 1px solid #ccc;
+	filter: grayscale(60%); /* Harmonized tones */
 }
 
-textarea {
-	width: 100%;
-	padding: 10px;
-	font-size: 16px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	margin-bottom: 10px;
+.feature-box h2 {
+	margin-top: 10px;
+	font-size: 20px;
+	color: #2f4f4f; /* Dark gray-blue */
 }
 
-button {
-	display: block;
+.feature-box button {
+	margin-top: 15px;
 	padding: 10px 20px;
-	font-size: 16px;
+	background-color: #cde4e4; /* Light blue accent */
 	border: none;
-	background-color: #007bff;
-	color: white;
-	border-radius: 4px;
+	color: #2f4f4f;
+	border-radius: 5px;
 	cursor: pointer;
-	margin: 0 auto;
 }
 
-button:hover {
-	background-color: #0056b3;
+.feature-box button:hover {
+	background-color: #bfdada;
 }
 
-footer {
+/* Dog Management Section */
+.dog-management {
 	text-align: center;
-	margin: 20px 0;
-	font-size: 14px;
-	color: #777;
-}
-
-#dog-management {
-	margin: 20px auto;
-	max-width: 600px;
-	padding: 10px;
-	border: 1px solid #ddd;
+	margin: 40px auto;
+	max-width: 800px;
+	padding: 20px;
+	background-color: #ffffff;
 	border-radius: 8px;
-	background: #fff;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#dog-management h1 {
-	text-align: center;
+.dog-management h1 {
+	font-size: 28px;
+	margin-bottom: 10px;
+	color: #2f4f4f;
 }
 
-#dog-management button {
-	display: block;
-	margin: 10px auto;
-	padding: 10px 20px;
-	background-color: #007bff;
-	color: white;
+.dog-management p {
+	margin-bottom: 20px;
+	font-size: 18px;
+}
+
+.dog-management button {
+	padding: 12px 24px;
+	background-color: #cde4e4; /* Light blue accent */
 	border: none;
-	border-radius: 4px;
+	color: #2f4f4f;
+	font-size: 18px;
+	border-radius: 5px;
 	cursor: pointer;
 }
 
-#dog-list {
-	margin: 20px 0;
+.dog-management button:hover {
+	background-color: #bfdada;
+}
+
+.dog-list {
+	margin-top: 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
 }
 
 .dog-item {
-	padding: 10px;
-	margin-bottom: 10px;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	background: #fafafa;
+	background-color: #ffffff;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	text-align: left;
 }
 
 .dog-item h3 {
 	margin: 0 0 10px;
+	font-size: 20px;
+	color: #2f4f4f;
 }
 
-.dog-item ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-.dog-item ul li {
-	margin: 5px 0;
-}
-
-.dog-item button {
-	margin-top: 10px;
-	padding: 5px 10px;
-	background-color: #ff6347;
-	color: white;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
+/* Footer */
+footer {
+	text-align: center;
+	padding: 20px;
+	background: #cde4e4; /* Light blue accent */
+	color: #2f4f4f;
 }

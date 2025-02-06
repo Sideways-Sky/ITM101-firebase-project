@@ -3,85 +3,66 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dog Feeding Website</title>
+		<title>Dog Haven</title>
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
+		<!-- Navigation -->
 		<header>
 			<nav>
+				<div class="nav-logo">
+					<a href="index.html">
+						<img src="images/logo.png" alt="Dog Logo" />
+					</a>
+				</div>
 				<ul>
-					<li><a href="/about.html">About</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#features">Features</a></li>
+					<li><a href="#dog-management">Dog Management</a></li>
+					<li><a href="faq.html">FAQ</a></li>
 				</ul>
 			</nav>
 		</header>
 
-		<main>
-			<!-- Dog feeding management -->
-			<section id="dog-management">
-				<h1>Dog Feeding Schedule</h1>
-				<button id="add-dog-button">Add Dog</button>
-				<div id="dog-list"></div>
-			</section>
+		<!-- Hero Section -->
+		<section id="hero" class="hero">
+			<h1>Welcome to Dog Haven</h1>
+			<p>Your trusted companion for dog care and feeding.</p>
+			<button onclick="location.href='#dog-management'">Get Started</button>
+		</section>
 
-			<!-- Dog Facts Page -->
-			<section id="dog-facts" class="page">
-				<h1>Dog Facts</h1>
-				<div class="search-bar">
-					<input type="text" id="breedSearch" placeholder="Search your dog's breed" />
-					<button id="searchButton">Search</button>
-				</div>
+		<!-- Features Section -->
+		<section id="features" class="features">
+			<div class="feature-box">
+				<img src="images/icon-dog.jpg" alt="Dog Icon" />
+				<h2>Learn About Your Dog</h2>
+				<p>Find breed-specific information and care tips.</p>
+			</div>
+			<div class="feature-box">
+				<img src="images/icon-calendar.jpg" alt="Calendar Icon" />
+				<h2>Set Feeding Reminders</h2>
+				<p>Keep track of your dog's meals with easy scheduling.</p>
+			</div>
+			<div class="feature-box">
+				<img src="images/icon-chat.jpg" alt="Chat Icon" />
+				<h2>Community & Support</h2>
+				<p>Connect with other dog owners for shared tips.</p>
+			</div>
+		</section>
 
-				<div class="dog-info">
-					<p><strong>Healthy Weight:</strong> <span id="healthyWeight">-</span></p>
-					<p><strong>Behavioral Patterns:</strong> <span id="behavioralPatterns">-</span></p>
-					<p><strong>Training Tips:</strong> <span id="trainingTips">-</span></p>
-					<p><strong>Daily Activity Needs:</strong> <span id="activityNeeds">-</span></p>
-					<p><strong>Best Diet:</strong> <span id="bestDiet">-</span></p>
-					<p><strong>Avoid:</strong> <span id="avoid">-</span></p>
-				</div>
-			</section>
+		<!-- Dog Management Section -->
+		<section id="dog-management" class="dog-management">
+			<h1>Dog Feeding Schedule</h1>
+			<p>Manage your dogs' feeding schedules easily!</p>
+			<button id="add-dog-button">Add Dog</button>
+			<div id="dog-list" class="dog-list"></div>
+		</section>
 
-			<!-- Feed That Dog Page -->
-			<section id="feed-that-dog" class="page">
-				<h1>Feed That Dog</h1>
-				<div class="feed-card">
-					<img src="dog1.png" alt="Dog Picture" />
-					<p>Name: <span>Rex</span></p>
-					<p>Reminder Time: <span>8:00 AM</span></p>
-					<p>How Much: <span>1 Cup</span></p>
-				</div>
-				<div class="feed-card">
-					<img src="dog2.png" alt="Dog Picture" />
-					<p>Name: <span>Bella</span></p>
-					<p>Reminder Time: <span>6:00 PM</span></p>
-					<p>How Much: <span>2 Cups</span></p>
-				</div>
-			</section>
-
-			<!-- FAQ Page -->
-			<section id="faq" class="page">
-				<h1>Facts & Questions</h1>
-				<div class="mission-statement">
-					<h2>Mission Statement</h2>
-					<p>We aim to educate dog owners about proper care and feeding for a happy, healthy life.</p>
-				</div>
-				<div class="how-to-use">
-					<h2>How to Use</h2>
-					<p>Search your dog's breed, set feeding reminders, and ensure you know the right facts.</p>
-				</div>
-				<div class="questions-concerns">
-					<h2>Questions? Concerns?</h2>
-					<textarea placeholder="Type your question here..."></textarea>
-					<button>Submit</button>
-				</div>
-			</section>
-		</main>
-
+		<!-- Footer -->
 		<footer>
-			<p>Return to Home</p>
+			<p>&copy; 2025 Dog Haven - All Rights Reserved</p>
 		</footer>
 
 		<script src="script.js"></script>
-		<script src="dogsearch.js"></script>
 	</body>
 </html>
