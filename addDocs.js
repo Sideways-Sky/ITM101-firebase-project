@@ -1,7 +1,7 @@
 // Import Firebase SDK (assuming you're using a module system)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"
+import { getFirestore, collection, addDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"
 
 // Your Firebase project configuration
 const firebaseConfig = {
@@ -21,7 +21,11 @@ const db = getFirestore(app)
 // Function to add a document from a JSON object to Firestore
 async function addDocumentFromJSON(jsonObject, collectionName, docId) {
 	try {
-		const docRef = await addDoc(collection(db, collectionName, docId), jsonObject)
+		const docRef = await addDoc(collection(db, collectionName), {
+			id: docId,
+			...jsonObject,
+		})
+
 		console.log("Document written with ID: ", docRef.id)
 	} catch (e) {
 		console.error("Error adding document: ", e)
@@ -229,6 +233,86 @@ const sampleJson = {
 		activityNeeds: "Low to moderate; short walks and playtime are sufficient.",
 		bestDiet: "High-quality dog food, ideally with high protein and low fat.",
 		avoid: "Avoid overfeeding as they are prone to obesity.",
+	},
+	dalmatian: {
+		healthyWeight: "45-70 lbs",
+		behavioralPatterns: "Energetic, Intelligent, Loyal",
+		trainingTips: "Firm and consistent training; they are highly trainable.",
+		activityNeeds: "High; needs daily exercise and mental stimulation.",
+		bestDiet: "High-protein diet, with a focus on meat-based proteins.",
+		avoid: "Avoid excessive exercise in hot weather due to risk of heatstroke.",
+	},
+	shibaInu: {
+		healthyWeight: "17-23 lbs",
+		behavioralPatterns: "Independent, Alert, Loyal",
+		trainingTips: "They can be stubborn, so patience and consistency are key.",
+		activityNeeds: "Moderate; enjoys walks and playtime.",
+		bestDiet: "Well-balanced diet with high-quality protein.",
+		avoid: "Avoid harsh training methods; they need gentle and firm guidance.",
+	},
+	schnauzer: {
+		healthyWeight: "Miniature: 12-20 lbs; Standard: 30-50 lbs; Giant: 55-85 lbs",
+		behavioralPatterns: "Alert, Intelligent, Spirited",
+		trainingTips: "They thrive with positive reinforcement and consistent training.",
+		activityNeeds: "Moderate to high; enjoy outdoor activities and mental challenges.",
+		bestDiet: "High-quality protein-rich food to maintain muscle mass.",
+		avoid: "Avoid overfeeding, especially in smaller schnauzers, as they tend to gain weight.",
+	},
+	englishBulldog: {
+		healthyWeight: "40-50 lbs",
+		behavioralPatterns: "Calm, Loyal, Affectionate",
+		trainingTips: "Short, gentle training sessions work best for them.",
+		activityNeeds: "Low to moderate; short walks and lounging are sufficient.",
+		bestDiet: "Moderate-calorie food to avoid obesity.",
+		avoid: "Avoid overheating and excessive exercise, especially in hot weather.",
+	},
+	maltese: {
+		healthyWeight: "4-7 lbs",
+		behavioralPatterns: "Affectionate, Playful, Intelligent",
+		trainingTips: "They respond well to positive reinforcement and gentle training.",
+		activityNeeds: "Moderate; enjoys indoor play and short outdoor walks.",
+		bestDiet: "High-quality small-breed dog food.",
+		avoid: "Avoid overfeeding, as they are prone to obesity.",
+	},
+	westHighlandWhiteTerrier: {
+		healthyWeight: "15-20 lbs",
+		behavioralPatterns: "Confident, Independent, Affectionate",
+		trainingTips: "They can be stubborn, so firm but gentle training is essential.",
+		activityNeeds: "Moderate; daily walks and playtime are important.",
+		bestDiet: "High-quality small-breed dog food.",
+		avoid: "Avoid overfeeding, as they can easily become overweight.",
+	},
+	berneseMountainDog: {
+		healthyWeight: "70-115 lbs",
+		behavioralPatterns: "Calm, Loyal, Gentle",
+		trainingTips: "Gentle, consistent training is essential.",
+		activityNeeds: "Moderate; daily walks and playtime are necessary.",
+		bestDiet: "Large-breed, high-quality protein food.",
+		avoid: "Avoid high-impact exercise before full growth to protect joints.",
+	},
+	greatPyrenees: {
+		healthyWeight: "85-115 lbs",
+		behavioralPatterns: "Loyal, Gentle, Protective",
+		trainingTips: "Gentle but consistent training; they are independent thinkers.",
+		activityNeeds: "Moderate to high; daily walks and some playtime are necessary.",
+		bestDiet: "High-quality large-breed dog food to support joint health.",
+		avoid: "Avoid harsh training methods; they respond better to patience.",
+	},
+	dobermanPinscher: {
+		healthyWeight: "60-100 lbs",
+		behavioralPatterns: "Loyal, Intelligent, Protective",
+		trainingTips: "Firm and consistent training is essential; they are very trainable.",
+		activityNeeds: "High; they need mental and physical exercise.",
+		bestDiet: "High-protein, meat-based food to support muscle growth.",
+		avoid: "Avoid over-exercising puppies to protect their joints.",
+	},
+	yorkshireTerrier: {
+		healthyWeight: "4-7 lbs",
+		behavioralPatterns: "Bold, Intelligent, Lively",
+		trainingTips: "They are highly trainable, but can be a little stubborn.",
+		activityNeeds: "Moderate; enjoy indoor play and short outdoor walks.",
+		bestDiet: "High-quality small-breed food with a focus on protein.",
+		avoid: "Avoid overfeeding as they can become overweight.",
 	},
 }
 

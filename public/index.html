@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Dog Haven</title>
 		<link rel="stylesheet" href="styles.css" />
+		<!-- Content Security Policy -->
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline' https://apis.google.com; style-src 'self' 'unsafe-inline';" />
 	</head>
 	<body>
 		<!-- Navigation -->
@@ -20,6 +22,97 @@
 					<li><a href="#features">Features</a></li>
 					<li><a href="#dog-management">Dog Management</a></li>
 					<li><a href="faq.html">FAQ</a></li>
+				</ul>
+				<div id="login-logout">
+					<div>
+						<button id="google-login-btn"><i class="fab fa-google"></i> Google Login</button>
+					</div>
+					<div>
+						<button id="google-logout-btn"><i class="fab fa-google"></i> Google Logout</button>
+					</div>
+					<div>
+						<img id="userProfilePicture" alt="profile pic from Google" />
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Hero Section -->
+		<section id="hero" class="hero">
+			<h1>Welcome to Dog Haven</h1>
+			<p>Your trusted companion for dog care and feeding.</p>
+			<button onclick="location.href='#dog-management'">Get Started</button>
+		</section>
+
+		<!-- Features Section -->
+		<section id="features" class="features">
+			<div class="feature-box">
+				<img src="images/icon-dog.jpg" alt="Dog Icon" />
+				<h2>Learn About Your Dog</h2>
+				<p>Find breed-specific information and care tips.</p>
+			</div>
+			<div class="feature-box">
+				<img src="images/icon-calendar.jpg" alt="Calendar Icon" />
+				<h2>Set Feeding Reminders</h2>
+				<p>Keep track of your dog's meals with easy scheduling.</p>
+			</div>
+			<div class="feature-box">
+				<img src="images/icon-chat.jpg" alt="Chat Icon" />
+				<h2>Community & Support</h2>
+				<p>Connect with other dog owners for shared tips.</p>
+			</div>
+		</section>
+
+		<!-- Dog Management Section -->
+		<section id="dog-management" class="dog-management">
+			<h1>Dog Feeding Schedule</h1>
+			<p>Manage your dogs' feeding schedules easily!</p>
+			<button id="add-dog-button">Add Dog</button>
+			<div id="dog-list" class="dog-list"></div>
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<p>&copy; 2025 Dog Haven - All Rights Reserved</p>
+		</footer>
+
+		<script src="config.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dog Haven</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<!-- Navigation -->
+		<header>
+			<nav>
+				<div class="nav-logo">
+					<a href="index.html">
+						<img src="images/logo.png" alt="Dog Logo" />
+					</a>
+				</div>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#features">Features</a></li>
+					<li><a href="#dog-management">Dog Management</a></li>
+					<li><a href="faq.html">FAQ</a></li>
+				</ul>
+				<ul id="login-logout">
+					<div class="input">
+						<button id="google-login-btn" class="google-button" style="display: none"><i class="fab fa-google"></i> Google Login</button>
+					</div>
+					<div class="input">
+						<button id="google-logout-btn" class="google-button" style="display: none"><i class="fab fa-google"></i> Google Logout</button>
+					</div>
+					<div>
+						<img id="userProfilePicture" alt="profile pic from Google" style="display: none" />
+					</div>
 				</ul>
 			</nav>
 		</header>
@@ -63,6 +156,7 @@
 			<p>&copy; 2025 Dog Haven - All Rights Reserved</p>
 		</footer>
 
+		<script src="config.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>
